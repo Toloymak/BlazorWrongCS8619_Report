@@ -1,0 +1,24 @@
+﻿@page "/"
+
+<PageTitle>Home</PageTitle>
+
+<h1>Hello, world!</h1>
+
+Welcome to your new app.
+
+@* Example of the problem *@
+<SomeFakeTestComponent
+    T="RandomClass"
+    Value="SomeValue"
+    ValueChanged="@(value => Console.WriteLine(value?.SomeValue ?? "Some Value"))" />
+
+@* Work around: *@
+@* ReSharper disable once CSharpWarnings::CS8619 : False positive in ReSharper *@
+<SomeFakeTestComponent
+    T="RandomClass"
+    Value="SomeValue"
+    ValueChanged="@(value => Console.WriteLine(value?.SomeValue ?? "Some Value"))" />
+
+@code{
+    RandomClass? SomeValue { get; set; } = new RandomClass();
+}

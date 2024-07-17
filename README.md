@@ -1,5 +1,7 @@
 # BlazorWrongCS8619_Report
 
+JB report: https://youtrack.jetbrains.com/issue/RIDER-114891
+
 1. Create generic component with disable nullability and EventCallback<T> property (example: SomeFakeTestComponent)
 2. Try handle nullability in function - we get CS8619
 3. Tty handle as no nullable - we get CS8602

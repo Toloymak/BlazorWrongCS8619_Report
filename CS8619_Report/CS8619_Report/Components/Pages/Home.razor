@@ -12,6 +12,12 @@ Welcome to your new app.
     Value="SomeValue"
     ValueChanged="@(value => Console.WriteLine(value?.SomeValue ?? "Some Value"))" />
 
+@* Handle as not nullable *@
+<SomeFakeTestComponent
+    T="RandomClass"
+    Value="SomeValue2"
+    ValueChanged="@(value => Console.WriteLine(value.SomeValue))" />
+
 @* Work around: *@
 @* ReSharper disable once CSharpWarnings::CS8619 : False positive in ReSharper *@
 <SomeFakeTestComponent
@@ -20,5 +26,6 @@ Welcome to your new app.
     ValueChanged="@(value => Console.WriteLine(value?.SomeValue ?? "Some Value"))" />
 
 @code{
-    RandomClass? SomeValue { get; set; } = new RandomClass();
+    RandomClass? SomeValue { get; set; }
+    RandomClass? SomeValue2 { get; set; }
 }
